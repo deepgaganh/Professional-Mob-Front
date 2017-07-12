@@ -22,4 +22,15 @@ app.controller('BlogDetailController',function($scope,$location,BlogPostService,
 		})
 	}
 	
+	$scope.addComment=function(){
+
+		$scope.blogComment.blogPost=$scope.blogPost
+		BlogPostService.addComment($scope.blogComment).then(function(response){
+			alert('Comment added sucessfully')
+			$scope.blogComment.body=''
+			console.log(response.status)
+		},function(response){
+			console.log(response.status)
+		})
+	}
 })

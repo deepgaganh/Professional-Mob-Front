@@ -11,7 +11,13 @@
 		<div class="panel-body">{{blogPost.description}}</div>
 	</div>
 
+</div>
+<div class="container">
 
-
+	<form>
+		<textarea rows="3" cols="20" ng-model="blogComment.body"></textarea><br>
+		<br><button ng-click="addComment()" value="Post Comment"
+			class="btn btn-primary">Post Comment</button>
+	</form>
 
 </div>
