@@ -49,6 +49,9 @@ app.controller('BlogPostController',function($scope,BlogPostService,$location){
 		},function(response){
 			console.log(response.status);
 		})
+		
+		
+		
 	}
 })
 

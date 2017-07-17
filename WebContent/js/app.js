@@ -44,11 +44,17 @@ app.config(function($routeProvider) {
 		controller: 'BlogDetailController'
 		
 	})
+	
 	.when('/getBlogDetail/:id',{
 		templateUrl: 'views/blogdetails.html',
 		controller: 'BlogDetailController'
 	})
 
+	.when('/suggestedusers',{
+		templateUrl: 'views/suggestedusers.html',
+		controller: 'FriendController'
+	})
+	
 	.otherwise({
 		templateUrl : 'views/home.html'
 	})

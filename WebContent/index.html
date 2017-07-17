@@ -6,13 +6,13 @@
 </head>
 <body ng-app="myApp">
 
-	<header>
-		<nav class="navbar navbar-default">
+	<!-- <header> -->
+		<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
 			<button type="button" class="navbar-toggle collapsed"
 				data-toggle="collapse" data-target="#collapse-example"
 				aria-expanded="false">Toggle navigation</button>
 			<a class="navbar-brand" href="/">****</a>
-			</div>
+			
 
 			<div class="collapse navbar-collapse" id="collapse-example">
 				<ul class="nav navbar-nav ">
@@ -26,14 +26,23 @@
 						data-toggle="dropdown" ng-show="currentUser.username">Blog<b
 							class="caret"></b></a>
 
-						<ul>
+						<ul class="dropdown-menu">
 							<li><a href="#/saveblogpost" ng-show="currentUser.firstname">Add
 									Blog Post</a></li>
 							<li><a href="#/getallblogs" ng-show="currentUser.firstname">All
 									Blogs</a></li>
 						</ul>
 					</li>
+					<li class="dropdown">
+						<a href="" class="dropdown-toggle" data-toggle="dropdown" ng-show="currentUser.username">
+						Friend<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+							<li><a href="#/suggestedusers" ng-show="currentUser.firstname">Check Friends</a></li>
+						</ul>			
+					<li><a href="#/suggestedusers" ng-show="currentUser.firstname">Check Friends</a></li>
 					
+					
+					</li>
 					<li><a href="" ng-show="currentUser.firstname">Welcome
 							{{currentUser.firstname}} &nbsp; {{currentUser.lastname}}</a></li>
 					<li><a href="" ng-show="currentUser.firstname"
@@ -41,9 +50,8 @@
 
 				</ul>
 		</nav>
-	</header>
+	<!-- </header> -->
 
-	<hr>
 	<div ng-view></div>
 </body>
 
@@ -78,5 +86,7 @@
 <script src="controller/blogpostcontroller.js"></script>
 <script src="service/blogpostservice.js"></script>
 <script src="controller/blogdetailscontroller.js"></script>
+<script src="service/friendservice.js"></script>
+<script src="controller/friendcontroller.js"></script>
 
 </html>
