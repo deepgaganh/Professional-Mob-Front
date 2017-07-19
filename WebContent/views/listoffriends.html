@@ -1,0 +1,11 @@
+<div class="container">
+<table class="table table-striped">
+<tr ng-repeat = "f in friendList">
+
+<td ng-hide="currentUser.username==f.fromId">{{f.fromId}}</td>
+<td ng-hide="currentUser.username==f.toId">{{f.toId}}</td>
+
+<td></td>
+</tr>
+</table>
+</div>
