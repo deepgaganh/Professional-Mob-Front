@@ -19,6 +19,15 @@ app.factory('UserService', function($http){
 		return $http.get("http://localhost:8080/ProfessionalMobBackend/users/logout")
 	}
 	
+	userService.getUserByUsername=function(){
+		return $http.get("http://localhost:8080/ProfessionalMobBackend/users/getuserdetails")
+	}
+	
+	userService.updateUserProfile=function(user){
+		return $http.put("http://localhost:8080/ProfessionalMobBackend/users/updateprofile",user)
+	}
+	
+	
 	return userService;
 	
 	

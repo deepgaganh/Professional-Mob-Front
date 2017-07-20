@@ -2,54 +2,76 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet">
+
+
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	type="text/javascript"></script>
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
+	rel="stylesheet" />
+
 <title>Professional Mob</title>
 </head>
 <body ng-app="myApp">
 
 	<!-- <header> -->
-		<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#collapse-example"
-				aria-expanded="false">Toggle navigation</button>
-			<a class="navbar-brand" href="/">****</a>
-			
+	<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+		<button type="button" class="navbar-toggle collapsed"
+			data-toggle="collapse" data-target="#collapse-example"
+			aria-expanded="false">Toggle navigation</button>
+		<a class="navbar-brand" href="/">****</a>
 
-			<div class="collapse navbar-collapse" id="collapse-example">
-				<ul class="nav navbar-nav ">
-					<li><a href="#/registration" ng-hide="currentUser.firstname">Register</a></li>
-					<li><a href="#/login" ng-hide="currentUser.firstname">Login</a></li>
-					<li><a href="#/getalljobs" ng-show="currentUser.firstname">All
-							Jobs</a></li>
-					<li><a href="#/savejob" ng-show="currentUser.role=='Admin'">Save
-							Job</a></li>
-					<li class="dropdown"><a href="" class="dropdown-toggle"
-						data-toggle="dropdown" ng-show="currentUser.username">Blog<b
-							class="caret"></b></a>
 
-						<ul class="dropdown-menu">
-							<li><a href="#/saveblogpost" ng-show="currentUser.firstname">Add
-									Blog Post</a></li>
-							<li><a href="#/getallblogs" ng-show="currentUser.firstname">All
-									Blogs</a></li>
-						</ul>
-					</li>
-					<li class="dropdown">
-						<a href="" class="dropdown-toggle" data-toggle="dropdown" ng-show="currentUser.username">
-						Friend<b class="caret"></b></a>
-							<ul class="dropdown-menu">
-							<li><a href="#/suggestedusers" ng-show="currentUser.firstname">Find Friends</a></li>
-							<li><a href="#/pendingrequests" ng-show="currentUser.firstname">Pending Requests</a></li>
-							<li><a href="#/listoffriends" ng-show="currentUser.firstname">Friends</a></li>
-						</ul>			
-										
-					</li>
-					<li><a href="" ng-show="currentUser.firstname">Welcome
-							{{currentUser.firstname}} &nbsp; {{currentUser.lastname}}</a></li>
-					<li><a href="" ng-show="currentUser.firstname"
-						ng-click="logout()">Logout</a></li>
+		<div class="collapse navbar-collapse" id="collapse-example">
+			<ul class="nav navbar-nav ">
+				<li><a href="#/registration" ng-hide="currentUser.firstname">Register</a></li>
+				<li><a href="#/login" ng-hide="currentUser.firstname">Login</a></li>
+				<li><a href="#/getalljobs" ng-show="currentUser.firstname">All
+						Jobs</a></li>
+				<li><a href="#/savejob" ng-show="currentUser.role=='Admin'">Save
+						Job</a></li>
+				<li class="dropdown"><a href="" class="dropdown-toggle"
+					data-toggle="dropdown" ng-show="currentUser.username">Blog<b
+						class="caret"></b></a>
 
-				</ul>
-		</nav>
+					<ul class="dropdown-menu">
+						<li><a href="#/saveblogpost" ng-show="currentUser.firstname">Add
+								Blog Post</a></li>
+						<li><a href="#/getallblogs" ng-show="currentUser.firstname">All
+								Blogs</a></li>
+					</ul></li>
+				<li class="dropdown"><a href="" class="dropdown-toggle"
+					data-toggle="dropdown" ng-show="currentUser.username"> Friend<b
+						class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#/suggestedusers"
+							ng-show="currentUser.firstname">Find Friends</a></li>
+						<li><a href="#/pendingrequests"
+							ng-show="currentUser.firstname">Pending Requests</a></li>
+						<li><a href="#/listoffriends" ng-show="currentUser.firstname">Friends</a></li>
+					</ul></li>
+
+				<li><a href="#/profilepic" ng-show="currentUser.username"> <img
+						src="http://localhost:8080/ProfessionalMobBackend/profilepic/getimage/{{currentUser.username}}"
+						alt="upload Picture" width="30px" height="30px"
+						class="img-rounded">
+				</a></li>
+				<li><a href="#/edituserprofile" ng-show="currentUser.firstname">Edit Profile</a></li>
+				<li><a href="" ng-show="currentUser.firstname">Welcome
+						{{currentUser.firstname}} &nbsp; {{currentUser.lastname}}</a></li>
+				<li><a href="" ng-show="currentUser.firstname"
+					ng-click="logout()">Logout</a></li>
+
+			</ul>
+	</nav>
 	<!-- </header> -->
 
 	<div ng-view></div>
@@ -62,7 +84,7 @@
 <script src="angular/angular-cookies.js"></script>
 
 <!-- BootStrap -->
-<script type="text/javascript"
+<!-- <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.js"></script>
 
 <script type="text/javascript"
@@ -77,7 +99,7 @@
 
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css">
-
+ -->
 <script src="js/app.js"></script>
 <script src="controller/UserController.js"></script>
 <script src="service/UserService.js"></script>

@@ -1,12 +1,11 @@
-var app = angular.module('myApp', [ 'ngRoute','ngCookies'])
+var app = angular.module('myApp', [ 'ngRoute', 'ngCookies' ])
 
 app.config(function($routeProvider) {
 
 	console.log('Entering config function')
 	$routeProvider
 	/*
-	 * .when('/' ,{ templateUrl : 'views/Home.html'
-	 *  })
+	 * .when('/' ,{ templateUrl : 'views/Home.html' })
 	 */
 	.when('/registration', {
 		templateUrl : 'views/registrationform.html',
@@ -17,53 +16,60 @@ app.config(function($routeProvider) {
 		templateUrl : 'views/login1.html',
 		controller : 'UserController'
 	})
-	
-	.when('/savejob',{
+
+	.when('/savejob', {
 		templateUrl : 'views/jobform.html',
 		controller : 'JobController'
 	})
-	
-	.when('/getalljobs',{
+
+	.when('/getalljobs', {
 		templateUrl : 'views/jobtitles.html',
-		controller :'JobController'
-	})
-	
-	.when('/saveblogpost',{
-		templateUrl: 'views/blogpostform.html',
-		controller: 'BlogPostController'
-		
-	})
-	
-	.when('/getallblogs',{
-		templateUrl: 'views/bloglist.html',
-		controller: 'BlogPostController'
-		
-	})
-	.when('/getBlogForApproval/:id',{
-		templateUrl: 'views/approvalform.html',
-		controller: 'BlogDetailController'
-		
-	})
-	
-	.when('/getBlogDetail/:id',{
-		templateUrl: 'views/blogdetails.html',
-		controller: 'BlogDetailController'
+		controller : 'JobController'
 	})
 
-	.when('/suggestedusers',{
-		templateUrl: 'views/suggestedusers.html',
-		controller: 'FriendController'
+	.when('/saveblogpost', {
+		templateUrl : 'views/blogpostform.html',
+		controller : 'BlogPostController'
+
+	})
+
+	.when('/getallblogs', {
+		templateUrl : 'views/bloglist.html',
+		controller : 'BlogPostController'
+
+	}).when('/getBlogForApproval/:id', {
+		templateUrl : 'views/approvalform.html',
+		controller : 'BlogDetailController'
+
+	})
+
+	.when('/getBlogDetail/:id', {
+		templateUrl : 'views/blogdetails.html',
+		controller : 'BlogDetailController'
+	})
+
+	.when('/suggestedusers', {
+		templateUrl : 'views/suggestedusers.html',
+		controller : 'FriendController'
+	})
+
+	.when('/pendingrequests', {
+		templateUrl : 'views/pendingrequests.html',
+		controller : 'FriendController'
+	})
+
+	.when('/listoffriends', {
+		templateUrl : 'views/listoffriends.html',
+		controller : 'FriendController'
+	})
+
+	.when('/profilepic', {
+		templateUrl : 'views/profilepicture.html'
 	})
 	
-	
-	.when('/pendingrequests',{
-		templateUrl: 'views/pendingrequests.html',
-		controller: 'FriendController'
-	})
-		
-	.when('/listoffriends',{
-		templateUrl: 'views/listoffriends.html',
-		controller: 'FriendController'
+	.when('/edituserprofile', {
+		templateUrl : 'views/updateprofile.html',
+			controller : 'UserController'	
 	})
 	
 	.otherwise({
@@ -71,10 +77,10 @@ app.config(function($routeProvider) {
 	})
 })
 
-app.run(function($rootScope, $location,UserService,$cookieStore) {
+app.run(function($rootScope, $location, UserService, $cookieStore) {
 	console.log('Entering run function')
-	if ($rootScope.currentUser==undefined)
-	$rootScope.currentUser=$cookieStore.get("currentUser")
+	if ($rootScope.currentUser == undefined)
+		$rootScope.currentUser = $cookieStore.get("currentUser")
 
 	$rootScope.logout = function() {
 		UserService.logout().then(function(response) {
