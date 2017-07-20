@@ -69,7 +69,12 @@ app.config(function($routeProvider) {
 	
 	.when('/edituserprofile', {
 		templateUrl : 'views/updateprofile.html',
-			controller : 'UserController'	
+		controller : 'UserController'	
+	})
+	
+	.when('/chat', {
+		templateUrl : 'views/chat.html',
+		controller : 'ChatCtrl'	
 	})
 	
 	.otherwise({
