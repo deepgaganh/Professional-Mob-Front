@@ -23,59 +23,81 @@
 <body ng-app="myApp">
 
 	<!-- <header> -->
-	<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-		<button type="button" class="navbar-toggle collapsed"
-			data-toggle="collapse" data-target="#collapse-example"
-			aria-expanded="false">Toggle navigation</button>
-		<a class="navbar-brand" href="/">****</a>
+	<div class="navbar navbar-light navbar-fixed-top"
+		style="background-color: #e3f2fd; padding: 20px 0px 0px 0px;">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar-main"
+					aria-expanded="false">Menu</button>
+				<a class="navbar-brand" href="#/home" style="padding:0;"><img class="img-responsive "
+					src="./images/logo.png" alt="logo" width="100px" height="100px"></a>
+			</div>
+			
+				<div class="collapse navbar-collapse" id="navbar-main">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#/registration" ng-hide="currentUser.firstname"><span class="glyphicon glyphicon-user" style="padding:5px;"></span>Register</a></li>
+						<li><a href="#/login" ng-hide="currentUser.firstname" ><span class="glyphicon glyphicon-log-in" style="padding:5px;"></span>Login</a></li>
+						<li><a href="#/profilepic" ng-show="currentUser.username">
+								<img
+								src="http://localhost:8080/ProfessionalMobBackend/profilepic/getimage/{{currentUser.username}}"
+								alt="upload Picture" width="30px" height="30px"
+								class="img-rounded">
+						</a></li>
+						<li><a ng-show="currentUser.firstname">Welcome
+								{{currentUser.firstname}} {{currentUser.lastname}}</a></li>
+							<li><a href="#/edituserprofile"
+							ng-show="currentUser.firstname">Edit Profile</a></li>		
+						<li><a href="" ng-show="currentUser.firstname"
+							ng-click="logout()">Logout</a></li>
+					
+					</ul>	
+					<ul class="nav navbar-nav">
+						<li><a href="#/getalljobs" ng-show="currentUser.firstname">All
+								Jobs</a></li>
+						<li><a href="#/savejob" ng-show="currentUser.role=='Admin'">Save
+								Job</a></li>
+						<li class="dropdown"><a href="" class="dropdown-toggle"
+							data-toggle="dropdown" ng-show="currentUser.username">Blog<b
+								class="caret"></b></a>
+
+							<ul class="dropdown-menu">
+								<li><a href="#/saveblogpost"
+									ng-show="currentUser.firstname">Add Blog Post</a></li>
+								<li><a href="#/getallblogs" ng-show="currentUser.firstname">All
+										Blogs</a></li>
+							</ul></li>
+						<li class="dropdown"><a href="" class="dropdown-toggle"
+							data-toggle="dropdown" ng-show="currentUser.username"> Friend<b
+								class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#/suggestedusers"
+									ng-show="currentUser.firstname">Find Friends</a></li>
+								<li><a href="#/pendingrequests"
+									ng-show="currentUser.firstname">Pending Requests</a></li>
+								<li><a href="#/listoffriends"
+									ng-show="currentUser.firstname">Friends</a></li>
+							</ul></li>
+							
+							<li><a href="#/chat" ng-show="currentUser.username">Chat</a></li>
+
+						
+
+					</ul>
+				</div>
+			
+		</div>
+		
+		</div>
 
 
-		<div class="collapse navbar-collapse" id="collapse-example">
-			<ul class="nav navbar-nav ">
-				<li><a href="#/registration" ng-hide="currentUser.firstname">Register</a></li>
-				<li><a href="#/login" ng-hide="currentUser.firstname">Login</a></li>
-				<li><a href="#/getalljobs" ng-show="currentUser.firstname">All
-						Jobs</a></li>
-				<li><a href="#/savejob" ng-show="currentUser.role=='Admin'">Save
-						Job</a></li>
-				<li class="dropdown"><a href="" class="dropdown-toggle"
-					data-toggle="dropdown" ng-show="currentUser.username">Blog<b
-						class="caret"></b></a>
+		<!-- </header> -->
 
-					<ul class="dropdown-menu">
-						<li><a href="#/saveblogpost" ng-show="currentUser.firstname">Add
-								Blog Post</a></li>
-						<li><a href="#/getallblogs" ng-show="currentUser.firstname">All
-								Blogs</a></li>
-					</ul></li>
-				<li class="dropdown"><a href="" class="dropdown-toggle"
-					data-toggle="dropdown" ng-show="currentUser.username"> Friend<b
-						class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#/suggestedusers"
-							ng-show="currentUser.firstname">Find Friends</a></li>
-						<li><a href="#/pendingrequests"
-							ng-show="currentUser.firstname">Pending Requests</a></li>
-						<li><a href="#/listoffriends" ng-show="currentUser.firstname">Friends</a></li>
-					</ul></li>
-
-				<li><a href="#/profilepic" ng-show="currentUser.username"> <img
-						src="http://localhost:8080/ProfessionalMobBackend/profilepic/getimage/{{currentUser.username}}"
-						alt="upload Picture" width="30px" height="30px"
-						class="img-rounded">
-				</a></li>
-				<li><a href="#/edituserprofile" ng-show="currentUser.firstname">Edit Profile</a></li>
-				<li><a href="#/chat" ng-show="currentUser.username">Chat</a></li>
-				<li><a href="" ng-show="currentUser.firstname">Welcome
-						{{currentUser.firstname}} &nbsp; {{currentUser.lastname}}</a></li>
-				<li><a href="" ng-show="currentUser.firstname"
-					ng-click="logout()">Logout</a></li>
-
-			</ul>
-	</nav>
-	<!-- </header> -->
-
-	<div ng-view></div>
+<br>
+<br>
+<br>
+<br>
+		<div ng-view></div>
 </body>
 
 <script src="angular/angular.js"></script>
