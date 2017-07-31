@@ -1,18 +1,140 @@
-<!-- <div ng-controller="UserController as ctrl">
+<html>
+<head>
+<link href="./css/login.css" rel="stylesheet">
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-7">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong>Register</strong>
+					</div>
+					<div class="panel-body">
+						<form class="form-horizontal" role="form">
+							<div class="form-group">
+								<label for="inputEmail3" class="col-sm-3 control-label">
+									Firstname</label>
+								<div class="col-sm-9">
+									<input type="text" ng-model="user.firstname"
+										class="form-control" id="inputEmail3" placeholder="Firstname">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputPassword3" class="col-sm-3 control-label">
+									Lastname</label>
+								<div class="col-sm-9">
+									<input type="text" ng-model="user.lastname"
+										class="form-control" id="inputPassword3"
+										placeholder="Lastname">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputEmail3" class="col-sm-3 control-label">
+									Email</label>
+								<div class="col-sm-9">
+									<input type="email" ng-model="user.email"
+										class="form-control" id="inputPassword3"
+										placeholder="Email">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputUsername3" class="col-sm-3 control-label">
+									Username</label>
+								<div class="col-sm-9">
+									<input type="text" ng-model="user.username"
+										class="form-control" id="inputUsername3"
+										placeholder="Username">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputPassword3" class="col-sm-3 control-label">
+									Password</label>
+								<div class="col-sm-9">
+									<input type="password" ng-model="user.password"
+										class="form-control" id="inputPassword3"
+										placeholder="Password">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputPassword3" class="col-sm-3 control-label">
+									Role</label>
+								<div class="col-sm-4">
+									<input type="radio" ng-model="user.role"
+										class="form-control" id="inputRole3"
+										value="student">Student
+										<input type="radio" ng-model="user.role"
+										class="form-control" id="inputRole3"
+										value="alumini">Alumini
+										<input type="radio" ng-model="user.role"
+										class="form-control" id="inputRole3"
+										value="employee">Employee
+								</div>
+								
+							</div>
+							<div class="form-group last">
+								<div class="col-sm-offset-3 col-sm-9">
+									<button type="submit" class="btn btn-success btn-sm"
+										ng-click="register()">Sign Up</button>
+									<button type="reset" class="btn btn-default btn-sm">
+										Reset</button>
+								</div>
+							</div>
+						</form>
+						<h6 style="color: red;">{{error.message}}</h6>
+
+					</div>
+					<div class="panel-footer">
+						Already Registered? <a href="#/login">Login here</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+	{{error.message}}
+
+	<form>
+		Enter Firstname:<input type="text" ng-model="user.firstname"><br>
+		Enter lastname:<input type="text" ng-model="user.lastname"><br>
+		Enter email:<input type="text" ng-model="user.email"><br>
+		Enter Username:<input type="text" ng-model="user.username"><br>
+		Enter Password:<input type="text" ng-model="user.password"><br>
+		Select Role<input type="radio" ng-model="user.role" value="Student">Student
+		<input type="radio" ng-model="user.role" value="Alumini">Alumini
+		<input type="radio" ng-model="user.role" value="Employee">Employee
+		<br> <input type="submit" ng-click="register()"><br>
+	</form>
  -->
- <div>
- {{error.message}}
-<form>
-Enter Firstname:<input type="text" ng-model="user.firstname"><br>
-Enter lastname:<input type="text" ng-model="user.lastname"><br>
-Enter email:<input type="text" ng-model="user.email"><br>
-Enter Username:<input type="text" ng-model="user.username"><br>
-Enter Password:<input type="text" ng-model="user.password"><br>
-Select Role<input type="radio" ng-model="user.role" value="Student">Student
-<input type="radio" ng-model="user.role" value="Alumini">Alumini
-<input type="radio" ng-model="user.role" value="Employee">Employee
-<br>
-<input type="submit" ng-click="register()"><br>
-</form>
-</div>
-<!-- </div> -->
+
+</body>
+</html>
+
+
+
+

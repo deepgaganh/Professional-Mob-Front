@@ -1,8 +1,10 @@
 <div class="container">
+<h1>Pending Requests</h1>
 <table class="table">
 <tr ng-repeat = "pr in listOfPendingRequests">
-<td>{{pr.fromId}}</td><td>
-<a href="" ng-click="updatePendingRequest(pr.fromId,'A')" class="btn btn-primary">Accept</a></td>
+<td ng-hide="currentUser.username==f.fromId"><img src="http://localhost:8080/ProfessionalMobBackend/profilepic/getimage/{{pr.fromId}}" alt="image not Available" width="50px" height="50px" class="img-rounded"></td>
+<td>{{pr.fromId}}</td>
+<td><a href="" ng-click="updatePendingRequest(pr.fromId,'A')" class="btn btn-primary">Accept</a></td>
 <td><a href="" ng-click="updatePendingRequest(pr.fromId,'D')" class="btn btn-primary">Reject</a></td>
 
 

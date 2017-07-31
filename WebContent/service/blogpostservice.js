@@ -1,7 +1,10 @@
 /**
- * BlogPostService
  * 
+ * BlogPostService
+ *  
  */
+
+
 app.factory('BlogPostService',function($http){
 	
 	var blogPostService={}
@@ -21,17 +24,21 @@ app.factory('BlogPostService',function($http){
 	blogPostService.updateBlogPost=function(blogpost){
 		return $http.put("http://localhost:8080/ProfessionalMobBackend/blog/updateblogpost",blogpost)
 	}
+	
 	blogPostService.getBlogPost=function(id){
 		return $http.get("http://localhost:8080/ProfessionalMobBackend/blog/getblogby/"+id)
 	}
+	
 	blogPostService.addComment=function(blogComment){
 		return $http.post("http://localhost:8080/ProfessionalMobBackend/blog/addblogcomment" ,blogComment)
 	}
+	
 	blogPostService.getBlogComments=function(blogId){
 		return $http.get("http://localhost:8080/ProfessionalMobBackend/blog/getblogcomments/"+blogId)
 	}
 	
 	return blogPostService;
+	
 })
 
  

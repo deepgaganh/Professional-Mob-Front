@@ -44,6 +44,7 @@ app.controller('FriendController', function($scope,$location,FriendService){
 		FriendService.sendFriendRequest(toUsername).then(function(response){
 			alert("Friendrequest has been sent Successfully....")
 			$location.path('/suggestedusers')
+			listOfSuggestedUsers();
 		},function(response){
 			console.log(response.status);
 		})

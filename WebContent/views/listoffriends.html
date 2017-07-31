@@ -1,11 +1,21 @@
 <div class="container">
+<h1>List Of Friends</h1>
 <table class="table table-striped">
+<thead>
+<tr>
+<th>Profile Pic</th><th>Username</th><th>Online</th>
+</tr>
+</thead>
+<tbody>
 <tr ng-repeat = "f in friendList">
-
+<td ng-hide="currentUser.username==f.fromId"><img src="http://localhost:8080/ProfessionalMobBackend/profilepic/getimage/{{f.fromId}}" alt="image not Available" width="50px" height="50px" class="img-rounded"></td>
+<td ng-hide="currentUser.username==f.toId"><img src="http://localhost:8080/ProfessionalMobBackend/profilepic/getimage/{{f.toId}}" alt="image not Available" width="50px" height="50px" class="img-rounded"></td>
 <td ng-hide="currentUser.username==f.fromId">{{f.fromId}}</td>
 <td ng-hide="currentUser.username==f.toId">{{f.toId}}</td>
+<td ng-if="f.online"><span class="glyphicon glyphicon-user" style="color:green;"></span></td>
+<td ng-if="!f.online"><span class="glyphicon glyphicon-user" style="color:grey;"></span></td>
 
-<td></td>
 </tr>
+</tbody>
 </table>
 </div>
