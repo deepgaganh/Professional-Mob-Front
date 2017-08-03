@@ -1,27 +1,45 @@
-<div>
-<!-- Search<input ng-model="jobTitle"> -->
-<table class="table">
-<thead>
-<tr>
-<th>Job Tittle</th><th>Posted On</th>
-</tr>
-</thead>
-<tbody>
-<tr ng-repeat="job in jobs ">
-<td><a href="" ng-click="getJobDetail(job.id)">{{job.jobTitle}}</a></td>
-<td>{{job.postedOn | date:'yyyy:MM:dd'}}</td>
-</tr>
-</tbody>	
-</table>
-
-<div ng-show="showdetails">
-<b>Job Details</b><br>
-Job title : {{job.jobTitle}}<br>
-Job Description : {{job.jobDescription}}<br>
-Skils Required : {{job.skillsRequired}}<br>
-Experience : {{job.yrsOfExp}} <br>
-Location : {{job.location}}<br>
-Salary  : {{job.salary}}<br>
-Company : {{job.companyName}}
+<html>
+<head>
+<!-- <link href="./css/job.css" rel="stylesheet"> -->
+</head>
+<body>
+<div class="container">
+<!-- 	Search<input ng-model="jobTitle"> -->
+<h1 align="center">Find Jobs Here!</h1>
+	<div class="row">
+		<div id="job" class="col-sm-3">
+			<h3>JOB</h3>
+			<table class="table table-striped">
+				
+				<thead>
+					<tr>
+						<th>Job Tittle</th>
+						<th>Posted On</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="job in jobs ">
+						<td><a href="" ng-click="getJobDetail(job.id)">{{job.jobTitle}}</a></td>
+						<td>{{job.postedOn | date:'yyyy:MM:dd'}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="job" class="col-sm-9">
+			<div ng-show="showdetails">
+				<h3>JOB DETAILS</h3><br>
+				<table class="table table-stripped"> 
+				<tr><strong>Job title :</strong></tr>{{job.jobTitle}}<br>
+				<strong>Job Description :</strong> {{job.jobDescription}}<br> 
+				<strong>Skils Required :</strong> {{job.skillsRequired}}<br> 
+				<strong>Experience :</strong> {{job.yrsOfExp}} <br>
+				<strong>Location :</strong> {{job.location}}<br>
+				<strong> Salary :</strong> {{job.salary}}<br>
+				<strong>Company :</strong> {{job.companyName}}
+		</table>
+			</div>
+		</div>
+	</div>
 </div>
-</div>
+</body>
+</html>

@@ -1,19 +1,26 @@
-{{message}}
-<form>
-<table>
-<tr>
-<td>Enter Blog Title</td>
-<td><input ng-model="blogPost.title"></td>
-</tr>
-<tr>
-<td>Enter Blog Discription</td>
-<td><textarea ng-model="blogPost.description"></textarea></td>
-</tr>
-<td>
-<button class="btn btn-default" ng-click="saveBlogPost()">Post Blog</button>
-</td>
-<td>
+<div class="container">
+	<h1 align="center">Blog Posts Waiting for approval</h1>
+	<div class="row">
+		<div class="col-lg-8  col-md-offset-2" >
+			{{message}}
 
-</td>
-</table>
-</form>
+			<form>
+				<div class="form-group">
+					<label for="title">Blog Title</label> <input type="text"
+						class="form-control" placeholder="Blog Title"
+						ng-model="blogPost.title">
+				</div>
+
+				<div class="form-group">
+					<label for="name">Blog Discription</label>
+					<textarea class="form-control" rows="8"
+						ng-model="blogPost.description"></textarea>
+				</div>
+
+				<button class="btn btn-primary" ng-click="saveBlogPost()">Post
+					Blog</button>
+
+			</form>
+		</div>
+	</div>
+</div>

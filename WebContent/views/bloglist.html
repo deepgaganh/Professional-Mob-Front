@@ -1,33 +1,43 @@
+<div class="container">
+
 <div class="table-responsive" ng-show="currentUser.role=='Admin'">
 
-List of Blog Posts Waiting for approval 
-<table class="table">
-<tr><th>Recent Posts</th></tr>
+<h1>Blog Posts Waiting for approval</h1>
+<table class="table table-striped">
+<thead>
+<tr><th>Recent Posts</th><th>Written By</th><th>Date</th></tr>
+</thead>
+<tbody>
 <tr ng-repeat="blogPost in blogsWaitingForApproval">
+
 <td> <a href="#getBlogForApproval/{{blogPost.id}}">{{blogPost.title}}</a></td>
 <td> Created By:{{blogPost.createdBy.username}}</td>
 
 <td> Created On:{{blogPost.postedOn | date:'MM/dd/yyyy HH:mm'}}</td>
 </tr>
-
+</tbody>
 </table>
 </div>
 
-<div class="table-responsive">
+<div class="table table-striped">
 
-List of Blog Posts  
-<table class="table">
-<tr><th>Recent Posts</th></tr>
+<h1>Blog Posts</h1>  
+<table class="table table-striped ">
+<thead>
+<tr><th>Recent Posts</th><th>Written By</th><th>Date</th></tr>
+</thead>
+<tbody>
 <tr ng-repeat="blogPost in blogsApproved ">
 
 <td><a href="#getBlogDetail/{{blogPost.id}}">{{blogPost.title}}</a></td>
 <td> Created By:{{blogPost.createdBy.username}}</td>
 <td> Created On:{{blogPost.postedOn | date:'MM/dd/yyyy HH:mm'}}</td>
 </tr>
+</tbody>
 
 </table>
 </div>
-
+</div>
 
 
 

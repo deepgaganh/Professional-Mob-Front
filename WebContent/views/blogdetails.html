@@ -1,4 +1,67 @@
 
+<div class="container">
+	<div class="row">
+		<div class="col-lg-1"></div>
+		<div class="col-md-10">
+			<div id="postlist">
+				<div class="panel">
+					<div class="panel-heading">
+						<div class="text-center">
+							<div class="row">
+								<div class="col-sm-9">
+									<h3 class="pull-left">{{blogPost.title}}</h3>
+								</div>
+								<div class="col-sm-3">
+									<h4 class="pull-right">
+										<small><em>{{blogPost.postedOn | date:'medium'}}
+										</em></small>
+									</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel-body">{{blogPost.description}}</div>
+
+					<div class="panel-footer">
+						<span class="label label-default">{{blogPost.title}}</span> <span
+							class="label label-default pull-right">Created By :
+							{{blogPost.createdBy.username}}</span> <span class="label label-default"></span>
+					</div>
+				</div>
+			</div>
+			<form>
+				<div class="form-group">
+					
+					<textarea class="form-control" rows="2" cols="20"
+						ng-model="blogComment.body"></textarea>
+				</div>
+					<button ng-click="addComment()" value="Post Comment"
+						class="btn btn-primary">Post Comment</button>
+				</form>
+				<br>		
+					<!-- <a href="" ng-click="getBlogComments(blogPost.id)">Show Blog Comments</a>
+<ul ng-show="showComments"> -->
+					<li class="panel panel-default" ng-repeat="comment in blogComments" style="list-style: none; background-color:#F0F8FF;">
+						<div class="panel-body">
+							{{comment.body}} <br><span class="pull-right"><strong>{{comment.commentedBy.username}} </strong><strong>&nbsp;{{comment.commentedOn |
+								date:'MM/dd/yyyy'}}</strong></span>
+						</div>
+					</li>
+					
+				</div>
+			</div>
+
+
+
+		</div>
+	</div>
+</div>
+
+
+
+
+<!-- 
 <div class="row">
 
 	<div class="panel panel-default">
@@ -11,24 +74,6 @@
 		<div class="panel-body">{{blogPost.description}}</div>
 	</div>
 
-</div>
-<div class="container">
+</div> -->
 
-	<form>
-		<textarea rows="3" cols="20" ng-model="blogComment.body"></textarea><br>
-		<br><button ng-click="addComment()" value="Post Comment"
-			class="btn btn-primary">Post Comment</button>
-	</form>
-<div class="row">
-<!-- <a href="" ng-click="getBlogComments(blogPost.id)">Show Blog Comments</a>
-<ul ng-show="showComments"> -->
-<li ng-repeat="comment in blogComments" style="list-style: none;">
-<div>
-{{comment.body}}
-<span><strong>Commented By</strong>{{comment.commentedBy.username}}</span>
-<span><strong>Commented On</strong>{{comment.commentedOn | date:'MM/dd/yyyy'}}</span>
-</div>
-</li>
-</ul>
-</div>
-</div>
+
